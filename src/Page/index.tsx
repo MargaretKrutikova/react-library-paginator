@@ -20,7 +20,7 @@ class Page extends React.PureComponent<PropType> {
     if (event) {
       event.preventDefault();
     }
-    if (!this.props.isDisabled && this.props.isActive) {
+    if (!this.props.isDisabled && !this.props.isActive) {
       this.props.onPageChange(page);
     }
   };

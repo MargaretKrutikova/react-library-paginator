@@ -7,8 +7,6 @@ import * as PropTypes from "prop-types";
 import Paginator from "./Paginator";
 import PaginatorService from "./PaginatorService";
 
-import styles from "./styles.css";
-
 export type Props = {
   totalItems: number;
   onPageChange: (page: number) => void;
