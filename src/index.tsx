@@ -1,23 +1,58 @@
 /**
- * @class ExampleComponent
+ * @class PaginatorContainer
  */
 
-import * as React from 'react'
+import * as React from "react";
+import * as PropTypes from "prop-types";
+import Paginator from "./Paginator";
+import PaginatorService from "./PaginatorService";
 
-import styles from './styles.css'
+import styles from "./styles.css";
 
-export type Props = { text: string }
+export type Props = {
+  totalItems: number;
+  onPageChange: (page: number) => void;
+} & Partial<DefaultProps>;
 
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
+type DefaultProps = {
+  currentPage: number | null;
+  itemsPerPage: number | null;
+  maxPagesToShow: number | null;
+};
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+const defaultProps: DefaultProps = {
+  currentPage: 1,
+  itemsPerPage: 10,
+  maxPagesToShow: 3
+};
+
+const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
+  const {
+    onPageChange,
+    currentPage,
+    itemsPerPage,
+    maxPagesToShow,
+    totalItems
+  } = props;
+
+  const paginator = PaginatorService.getPaginator({
+    totalItems,
+    currentPage: currentPage!,
+    itemsPerPage: itemsPerPage!,
+    maxPagesToShow: maxPagesToShow!
+  });
+
+  return <Paginator onPageChange={onPageChange} {...paginator} />;
+};
+
+PaginatorContainer.defaultProps = defaultProps;
+
+PaginatorContainer.propTypes = {
+  totalItems: PropTypes.number.isRequired,
+  currentPage: PropTypes.number,
+  onPageChange: PropTypes.func.isRequired,
+  itemsPerPage: PropTypes.number,
+  maxPagesToShow: PropTypes.number
+};
+
+export default PaginatorContainer;
