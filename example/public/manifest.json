@@ -1,0 +1,8 @@
+{
+  "short_name": "react-library-paginator",
+  "name": "react-library-paginator",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
