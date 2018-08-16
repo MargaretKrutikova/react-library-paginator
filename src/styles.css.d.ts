@@ -1,4 +1,6 @@
 declare namespace styles {
-	const test: string
+	const rlPagination: string
+	const rlPageLink: string
+	const active: string
 }
 export default styles

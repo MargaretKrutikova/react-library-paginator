@@ -1,57 +1,95 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
+import classNames from "classnames";
 import Page from "../Page";
+import { PaginatorStyles, PaginatorClasses } from "../types";
+import styles from "../styles.css";
 
-type PropType = {
+type Props = {
   currentPage: number;
   totalPages: number;
   pagesToShow: number[];
   onPageChange: (page: number) => void;
+} & Partial<DefaultProps>;
+
+type DefaultProps = {
+  useBootstrapClasses: boolean | null;
+  styles: PaginatorStyles | null;
+  classes: PaginatorClasses | null;
 };
 
-class Paginator extends React.PureComponent<PropType> {
+class Paginator extends React.PureComponent<Props> {
   static propTypes = {
     currentPage: PropTypes.number.isRequired,
     totalPages: PropTypes.number.isRequired,
     pagesToShow: PropTypes.arrayOf(PropTypes.number).isRequired,
     onPageChange: PropTypes.func.isRequired
   };
+  static defaultProps: DefaultProps = {
+    classes: {},
+    styles: {},
+    useBootstrapClasses: true
+  };
   render() {
-    const { currentPage, totalPages, pagesToShow, onPageChange } = this.props;
+    const {
+      currentPage,
+      totalPages,
+      pagesToShow,
+      onPageChange,
+      useBootstrapClasses,
+      styles: customStyles,
+      classes
+    } = this.props;
+
     const isFirstPage = currentPage === 1,
       isLastPage = currentPage === totalPages;
 
+    const pageProps = {
+      styles: customStyles,
+      classes,
+      onPageChange,
+      useBootstrapClasses
+    };
+
     return (
-      <nav aria-label="Page navigation" className="paginator">
-        <ul className="pagination justify-content-center">
-          <Page {...{ onPageChange, page: 1, isDisabled: isFirstPage }}>
+      <nav
+        aria-label="Page navigation"
+        style={customStyles!.container}
+        className={classNames(
+          { paginator: useBootstrapClasses },
+          classes!.container
+        )}
+      >
+        <ul
+          style={customStyles!.list}
+          className={classNames(
+            [styles.rlPagination],
+            { paginaton: useBootstrapClasses },
+            [classes!.list]
+          )}
+        >
+          <Page page={1} isDisabled={isFirstPage} {...pageProps}>
             <span>First</span>
           </Page>
 
-          <Page
-            {...{
-              onPageChange,
-              page: currentPage - 1,
-              isDisabled: isFirstPage
-            }}
-          >
-            <span aria-hidden="true">&laquo;</span>
+          <Page page={currentPage - 1} isDisabled={isFirstPage} {...pageProps}>
+            <span>&larr;</span>
           </Page>
 
           {pagesToShow.map((page, index) => (
             <Page
               key={index}
               isDisabled={false}
-              {...{ onPageChange, page, isActive: page === currentPage }}
+              isActive={page === currentPage}
+              page={page}
+              {...pageProps}
             />
           ))}
 
-          <Page
-            {...{ onPageChange, page: currentPage + 1, isDisabled: isLastPage }}
-          >
-            <span aria-hidden="true">&raquo;</span>
+          <Page page={currentPage + 1} isDisabled={isLastPage} {...pageProps}>
+            <span>&rarr;</span>
           </Page>
-          <Page {...{ onPageChange, page: totalPages, isDisabled: isLastPage }}>
+          <Page page={totalPages} isDisabled={isLastPage} {...pageProps}>
             <span>Last</span>
           </Page>
         </ul>

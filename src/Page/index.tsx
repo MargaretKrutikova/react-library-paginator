@@ -1,5 +1,9 @@
 import * as React from "react";
 import * as PropTypes from "prop-types";
+import { PageStyles, PageClasses } from "../types";
+import classNames from "classnames";
+
+import styles from "../styles.css";
 
 export type PropType = {
   isActive?: boolean;
@@ -7,6 +11,12 @@ export type PropType = {
   page: number;
   children?: React.ReactNode;
   onPageChange: (page: number) => void;
+} & Partial<DefaultProps>;
+
+type DefaultProps = {
+  useBootstrapClasses: boolean | null;
+  styles: PageStyles | null;
+  classes: PageClasses | null;
 };
 
 class Page extends React.PureComponent<PropType> {
@@ -16,6 +26,11 @@ class Page extends React.PureComponent<PropType> {
     page: PropTypes.number.isRequired,
     onPageChange: PropTypes.func.isRequired
   };
+  static defaultProps: DefaultProps = {
+    classes: {},
+    styles: {},
+    useBootstrapClasses: true
+  };
   setPage = (event: React.MouseEvent<HTMLElement>, page: number) => {
     if (event) {
       event.preventDefault();
@@ -24,21 +39,39 @@ class Page extends React.PureComponent<PropType> {
       this.props.onPageChange(page);
     }
   };
-  getPageClass = () => {
-    const classes = ["page-item"];
-    this.props.isActive && classes.push("active");
-    this.props.isDisabled && classes.push("disabled");
-
-    return classes.join(" ");
-  };
   render() {
-    const { page } = this.props;
+    const { page, isActive, isDisabled, useBootstrapClasses } = this.props;
+    const {
+      pageItem,
+      pageLink,
+      pageLinkActive,
+      pageLinkDisabled
+    } = this.props.classes!;
+
+    const customStyles = this.props.styles!;
+    const pageLinkStyles = {
+      ...customStyles.pageLink,
+      ...(isActive ? customStyles.pageLinkActive : {}),
+      ...(isDisabled ? customStyles.pageLinkDisabled : {})
+    };
 
     return (
-      <li className={this.getPageClass()}>
+      <li
+        className={classNames({ "page-item": useBootstrapClasses }, [pageItem])}
+        style={customStyles.pageItem}
+      >
         <a
           href="#"
-          className="page-link"
+          className={classNames(
+            styles.rlPageLink,
+            { "page-link": useBootstrapClasses },
+            pageLink,
+            {
+              [`${styles.active} active ${pageLinkActive}`]: isActive,
+              [`disabled ${pageLinkDisabled}`]: isDisabled
+            }
+          )}
+          style={pageLinkStyles}
           onClick={event => this.setPage(event, page)}
         >
           {this.props.children || page}

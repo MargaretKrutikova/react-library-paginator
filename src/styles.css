@@ -1,8 +1,28 @@
-/* add css styles here (optional) */
+.rl-pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+.rl-page-link {
+  position: relative;
+  display: block;
+  padding: 0.2rem 0.5rem;
+  color: #135bb9;
+  text-decoration: none;
+}
+.rl-page-link:hover {
+  color: #6688b6;
+}
+
+.rl-page-link.active {
+  background-color: #dee2e6;
+  border-radius: 15%;
+  color: #444444;
+  cursor: default;
 }
