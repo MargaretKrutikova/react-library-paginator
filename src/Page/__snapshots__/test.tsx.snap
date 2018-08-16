@@ -4,10 +4,13 @@ exports[`Page it changes classes if isActive or isDisabled props change 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Page
+    classes={Object {}}
     isActive={false}
     isDisabled={false}
     onPageChange={[Function]}
     page={4}
+    styles={Object {}}
+    useBootstrapClasses={true}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -25,10 +28,12 @@ ShallowWrapper {
         className="page-link"
         href="#"
         onClick={[Function]}
+        style={Object {}}
       >
         4
       </a>,
       "className": "page-item",
+      "style": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -40,6 +45,7 @@ ShallowWrapper {
         "className": "page-link",
         "href": "#",
         "onClick": [Function],
+        "style": Object {},
       },
       "ref": null,
       "rendered": 4,
@@ -57,10 +63,12 @@ ShallowWrapper {
           className="page-link"
           href="#"
           onClick={[Function]}
+          style={Object {}}
         >
           4
         </a>,
         "className": "page-item",
+        "style": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -72,6 +80,7 @@ ShallowWrapper {
           "className": "page-link",
           "href": "#",
           "onClick": [Function],
+          "style": Object {},
         },
         "ref": null,
         "rendered": 4,
@@ -102,10 +111,13 @@ exports[`Page it changes classes if isActive or isDisabled props change 2`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Page
+    classes={Object {}}
     isActive={true}
     isDisabled={false}
     onPageChange={[Function]}
     page={4}
+    styles={Object {}}
+    useBootstrapClasses={true}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -120,13 +132,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <a
-        className="page-link"
+        className="page-link undefined active undefined"
         href="#"
         onClick={[Function]}
+        style={Object {}}
       >
         4
       </a>,
-      "className": "page-item active",
+      "className": "page-item",
+      "style": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -135,9 +149,10 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": 4,
-        "className": "page-link",
+        "className": "page-link undefined active undefined",
         "href": "#",
         "onClick": [Function],
+        "style": Object {},
       },
       "ref": null,
       "rendered": 4,
@@ -152,13 +167,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <a
-          className="page-link"
+          className="page-link undefined active undefined"
           href="#"
           onClick={[Function]}
+          style={Object {}}
         >
           4
         </a>,
-        "className": "page-item active",
+        "className": "page-item",
+        "style": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -167,9 +184,10 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 4,
-          "className": "page-link",
+          "className": "page-link undefined active undefined",
           "href": "#",
           "onClick": [Function],
+          "style": Object {},
         },
         "ref": null,
         "rendered": 4,
@@ -200,10 +218,13 @@ exports[`Page it changes classes if isActive or isDisabled props change 3`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Page
+    classes={Object {}}
     isActive={false}
     isDisabled={true}
     onPageChange={[Function]}
     page={4}
+    styles={Object {}}
+    useBootstrapClasses={true}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -218,13 +239,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <a
-        className="page-link"
+        className="page-link disabled undefined"
         href="#"
         onClick={[Function]}
+        style={Object {}}
       >
         4
       </a>,
-      "className": "page-item disabled",
+      "className": "page-item",
+      "style": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -233,9 +256,10 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": 4,
-        "className": "page-link",
+        "className": "page-link disabled undefined",
         "href": "#",
         "onClick": [Function],
+        "style": Object {},
       },
       "ref": null,
       "rendered": 4,
@@ -250,13 +274,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <a
-          className="page-link"
+          className="page-link disabled undefined"
           href="#"
           onClick={[Function]}
+          style={Object {}}
         >
           4
         </a>,
-        "className": "page-item disabled",
+        "className": "page-item",
+        "style": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -265,9 +291,10 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 4,
-          "className": "page-link",
+          "className": "page-link disabled undefined",
           "href": "#",
           "onClick": [Function],
+          "style": Object {},
         },
         "ref": null,
         "rendered": 4,

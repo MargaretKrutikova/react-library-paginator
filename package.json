@@ -12,16 +12,24 @@
     "node": ">=8",
     "npm": ">=5"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "identity-obj-proxy"
+    }
+  },
   "scripts": {
     "test": "cross-env CI=1 react-scripts-ts test --env=jsdom",
-    "test:watch": "react-scripts-ts test --env=jsdom --watchAll",
+    "test:watch": "react-scripts-ts test --env=jsdom --watchAll --updateSnapshot",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/classnames": "^2.2.6",
+    "classnames": "^2.2.6"
+  },
   "peerDependencies": {
     "prop-types": "^15.5.4",
     "react": "^15.0.0 || ^16.0.0",
@@ -39,6 +47,7 @@
     "enzyme": "^3.4.1",
     "enzyme-adapter-react-16": "^1.2.0",
     "gh-pages": "^1.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts-ts": "^2.16.0",

@@ -4,6 +4,7 @@ exports[`Paginator  matches snapshot 1`] = `
 ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Paginator
+    classes={Object {}}
     currentPage={4}
     onPageChange={[MockFunction]}
     pagesToShow={
@@ -14,7 +15,9 @@ ShallowWrapper {
         4,
       ]
     }
+    styles={Object {}}
     totalPages={10}
+    useBootstrapClasses={true}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -30,67 +33,88 @@ ShallowWrapper {
     "props": Object {
       "aria-label": "Page navigation",
       "children": <ul
-        className="pagination justify-content-center"
+        className="paginaton"
+        style={undefined}
       >
         <Page
+          classes={Object {}}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={1}
+          styles={Object {}}
+          useBootstrapClasses={true}
         >
           <span>
             First
           </span>
         </Page>
         <Page
+          classes={Object {}}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={3}
+          styles={Object {}}
+          useBootstrapClasses={true}
         >
-          <span
-            aria-hidden="true"
-          >
-            «
+          <span>
+            ←
           </span>
         </Page>
         <Page
+          classes={Object {}}
           isActive={false}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={1}
+          styles={Object {}}
+          useBootstrapClasses={true}
         />
         <Page
+          classes={Object {}}
           isActive={false}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={2}
+          styles={Object {}}
+          useBootstrapClasses={true}
         />
         <Page
+          classes={Object {}}
           isActive={false}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={3}
+          styles={Object {}}
+          useBootstrapClasses={true}
         />
         <Page
+          classes={Object {}}
           isActive={true}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={4}
+          styles={Object {}}
+          useBootstrapClasses={true}
         />
         <Page
+          classes={Object {}}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={5}
+          styles={Object {}}
+          useBootstrapClasses={true}
         >
-          <span
-            aria-hidden="true"
-          >
-            »
+          <span>
+            →
           </span>
         </Page>
         <Page
+          classes={Object {}}
           isDisabled={false}
           onPageChange={[MockFunction]}
           page={10}
+          styles={Object {}}
+          useBootstrapClasses={true}
         >
           <span>
             Last
@@ -98,6 +122,7 @@ ShallowWrapper {
         </Page>
       </ul>,
       "className": "paginator",
+      "style": undefined,
     },
     "ref": null,
     "rendered": Object {
@@ -107,73 +132,94 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={1}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
             <span>
               First
             </span>
           </Page>,
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={3}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
-            <span
-              aria-hidden="true"
-            >
-              «
+            <span>
+              ←
             </span>
           </Page>,
           Array [
             <Page
+              classes={Object {}}
               isActive={false}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={1}
+              styles={Object {}}
+              useBootstrapClasses={true}
             />,
             <Page
+              classes={Object {}}
               isActive={false}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={2}
+              styles={Object {}}
+              useBootstrapClasses={true}
             />,
             <Page
+              classes={Object {}}
               isActive={false}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={3}
+              styles={Object {}}
+              useBootstrapClasses={true}
             />,
             <Page
+              classes={Object {}}
               isActive={true}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={4}
+              styles={Object {}}
+              useBootstrapClasses={true}
             />,
           ],
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={5}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
-            <span
-              aria-hidden="true"
-            >
-              »
+            <span>
+              →
             </span>
           </Page>,
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={10}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
             <span>
               Last
             </span>
           </Page>,
         ],
-        "className": "pagination justify-content-center",
+        "className": "paginaton",
+        "style": undefined,
       },
       "ref": null,
       "rendered": Array [
@@ -185,9 +231,12 @@ ShallowWrapper {
             "children": <span>
               First
             </span>,
+            "classes": Object {},
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 1,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": Object {
@@ -208,14 +257,15 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <span
-              aria-hidden="true"
-            >
-              «
+            "children": <span>
+              ←
             </span>,
+            "classes": Object {},
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 3,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": Object {
@@ -223,11 +273,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "aria-hidden": "true",
-              "children": "«",
+              "children": "←",
             },
             "ref": null,
-            "rendered": "«",
+            "rendered": "←",
             "type": "span",
           },
           "type": [Function],
@@ -237,10 +286,13 @@ ShallowWrapper {
           "key": "0",
           "nodeType": "class",
           "props": Object {
+            "classes": Object {},
             "isActive": false,
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 1,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": null,
@@ -251,10 +303,13 @@ ShallowWrapper {
           "key": "1",
           "nodeType": "class",
           "props": Object {
+            "classes": Object {},
             "isActive": false,
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 2,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": null,
@@ -265,10 +320,13 @@ ShallowWrapper {
           "key": "2",
           "nodeType": "class",
           "props": Object {
+            "classes": Object {},
             "isActive": false,
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 3,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": null,
@@ -279,10 +337,13 @@ ShallowWrapper {
           "key": "3",
           "nodeType": "class",
           "props": Object {
+            "classes": Object {},
             "isActive": true,
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 4,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": null,
@@ -293,14 +354,15 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "children": <span
-              aria-hidden="true"
-            >
-              »
+            "children": <span>
+              →
             </span>,
+            "classes": Object {},
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 5,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": Object {
@@ -308,11 +370,10 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "aria-hidden": "true",
-              "children": "»",
+              "children": "→",
             },
             "ref": null,
-            "rendered": "»",
+            "rendered": "→",
             "type": "span",
           },
           "type": [Function],
@@ -325,9 +386,12 @@ ShallowWrapper {
             "children": <span>
               Last
             </span>,
+            "classes": Object {},
             "isDisabled": false,
             "onPageChange": [MockFunction],
             "page": 10,
+            "styles": Object {},
+            "useBootstrapClasses": true,
           },
           "ref": null,
           "rendered": Object {
@@ -356,67 +420,88 @@ ShallowWrapper {
       "props": Object {
         "aria-label": "Page navigation",
         "children": <ul
-          className="pagination justify-content-center"
+          className="paginaton"
+          style={undefined}
         >
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={1}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
             <span>
               First
             </span>
           </Page>
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={3}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
-            <span
-              aria-hidden="true"
-            >
-              «
+            <span>
+              ←
             </span>
           </Page>
           <Page
+            classes={Object {}}
             isActive={false}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={1}
+            styles={Object {}}
+            useBootstrapClasses={true}
           />
           <Page
+            classes={Object {}}
             isActive={false}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={2}
+            styles={Object {}}
+            useBootstrapClasses={true}
           />
           <Page
+            classes={Object {}}
             isActive={false}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={3}
+            styles={Object {}}
+            useBootstrapClasses={true}
           />
           <Page
+            classes={Object {}}
             isActive={true}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={4}
+            styles={Object {}}
+            useBootstrapClasses={true}
           />
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={5}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
-            <span
-              aria-hidden="true"
-            >
-              »
+            <span>
+              →
             </span>
           </Page>
           <Page
+            classes={Object {}}
             isDisabled={false}
             onPageChange={[MockFunction]}
             page={10}
+            styles={Object {}}
+            useBootstrapClasses={true}
           >
             <span>
               Last
@@ -424,6 +509,7 @@ ShallowWrapper {
           </Page>
         </ul>,
         "className": "paginator",
+        "style": undefined,
       },
       "ref": null,
       "rendered": Object {
@@ -433,73 +519,94 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Page
+              classes={Object {}}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={1}
+              styles={Object {}}
+              useBootstrapClasses={true}
             >
               <span>
                 First
               </span>
             </Page>,
             <Page
+              classes={Object {}}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={3}
+              styles={Object {}}
+              useBootstrapClasses={true}
             >
-              <span
-                aria-hidden="true"
-              >
-                «
+              <span>
+                ←
               </span>
             </Page>,
             Array [
               <Page
+                classes={Object {}}
                 isActive={false}
                 isDisabled={false}
                 onPageChange={[MockFunction]}
                 page={1}
+                styles={Object {}}
+                useBootstrapClasses={true}
               />,
               <Page
+                classes={Object {}}
                 isActive={false}
                 isDisabled={false}
                 onPageChange={[MockFunction]}
                 page={2}
+                styles={Object {}}
+                useBootstrapClasses={true}
               />,
               <Page
+                classes={Object {}}
                 isActive={false}
                 isDisabled={false}
                 onPageChange={[MockFunction]}
                 page={3}
+                styles={Object {}}
+                useBootstrapClasses={true}
               />,
               <Page
+                classes={Object {}}
                 isActive={true}
                 isDisabled={false}
                 onPageChange={[MockFunction]}
                 page={4}
+                styles={Object {}}
+                useBootstrapClasses={true}
               />,
             ],
             <Page
+              classes={Object {}}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={5}
+              styles={Object {}}
+              useBootstrapClasses={true}
             >
-              <span
-                aria-hidden="true"
-              >
-                »
+              <span>
+                →
               </span>
             </Page>,
             <Page
+              classes={Object {}}
               isDisabled={false}
               onPageChange={[MockFunction]}
               page={10}
+              styles={Object {}}
+              useBootstrapClasses={true}
             >
               <span>
                 Last
               </span>
             </Page>,
           ],
-          "className": "pagination justify-content-center",
+          "className": "paginaton",
+          "style": undefined,
         },
         "ref": null,
         "rendered": Array [
@@ -511,9 +618,12 @@ ShallowWrapper {
               "children": <span>
                 First
               </span>,
+              "classes": Object {},
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 1,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": Object {
@@ -534,14 +644,15 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <span
-                aria-hidden="true"
-              >
-                «
+              "children": <span>
+                ←
               </span>,
+              "classes": Object {},
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 3,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": Object {
@@ -549,11 +660,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "aria-hidden": "true",
-                "children": "«",
+                "children": "←",
               },
               "ref": null,
-              "rendered": "«",
+              "rendered": "←",
               "type": "span",
             },
             "type": [Function],
@@ -563,10 +673,13 @@ ShallowWrapper {
             "key": "0",
             "nodeType": "class",
             "props": Object {
+              "classes": Object {},
               "isActive": false,
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 1,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": null,
@@ -577,10 +690,13 @@ ShallowWrapper {
             "key": "1",
             "nodeType": "class",
             "props": Object {
+              "classes": Object {},
               "isActive": false,
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 2,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": null,
@@ -591,10 +707,13 @@ ShallowWrapper {
             "key": "2",
             "nodeType": "class",
             "props": Object {
+              "classes": Object {},
               "isActive": false,
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 3,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": null,
@@ -605,10 +724,13 @@ ShallowWrapper {
             "key": "3",
             "nodeType": "class",
             "props": Object {
+              "classes": Object {},
               "isActive": true,
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 4,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": null,
@@ -619,14 +741,15 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "children": <span
-                aria-hidden="true"
-              >
-                »
+              "children": <span>
+                →
               </span>,
+              "classes": Object {},
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 5,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": Object {
@@ -634,11 +757,10 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "aria-hidden": "true",
-                "children": "»",
+                "children": "→",
               },
               "ref": null,
-              "rendered": "»",
+              "rendered": "→",
               "type": "span",
             },
             "type": [Function],
@@ -651,9 +773,12 @@ ShallowWrapper {
               "children": <span>
                 Last
               </span>,
+              "classes": Object {},
               "isDisabled": false,
               "onPageChange": [MockFunction],
               "page": 10,
+              "styles": Object {},
+              "useBootstrapClasses": true,
             },
             "ref": null,
             "rendered": Object {
