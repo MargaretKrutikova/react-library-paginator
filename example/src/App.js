@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import ExampleComponent from 'react-library-paginator'
+import DefaultPaginator from './examples/DefaultPaginator';
+import BootstrapPaginator from './examples/BootstrapPaginator';
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
-      <div>
-        <ExampleComponent text='Modern React component module' />
+      <div className="app-container">
+        <div className="title">No Boostrap</div>
+        <DefaultPaginator />
+        <div className="title">Bootstrap</div>
+
+        <BootstrapPaginator />
       </div>
-    )
+    );
   }
 }
