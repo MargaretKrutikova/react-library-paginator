@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Paginator from 'react-library-paginator';
 
-export default class BootstrapPaginator extends Component {
+export default class BasicPaginator extends Component {
   state = { page: 1, totalItems: 120 };
   handlePageChange = page => {
     this.setState({ page });
@@ -14,7 +14,6 @@ export default class BootstrapPaginator extends Component {
         totalItems={totalItems}
         currentPage={page}
         onPageChange={this.handlePageChange}
-        useBootstrapClasses={true}
       />
     );
   }

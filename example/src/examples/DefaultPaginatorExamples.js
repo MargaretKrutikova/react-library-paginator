@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
-import Paginator from 'react-library-paginator';
+import BasicPaginator from './BasicPaginator';
+import CustomClassesPaginator from './CustomClassesPaginator';
+import CustomStylesPaginator from './CustomStylesPaginator';
 
-const DefaultPaginatorExample = () => (
+const DefaultPaginatorExamples = () => (
   <div className="example-container">
     <div className="example">
       <div className="subtitle">Default css</div>
@@ -82,74 +84,4 @@ const DefaultPaginatorExample = () => (
   </div>
 );
 
-export default DefaultPaginatorExample;
-
-class BasicPaginator extends Component {
-  state = { page: 1, totalItems: 120 };
-  handlePageChange = page => {
-    this.setState({ page });
-  };
-  render() {
-    const { page, totalItems } = this.state;
-    return (
-      <Paginator
-        totalItems={totalItems}
-        currentPage={page}
-        onPageChange={this.handlePageChange}
-      />
-    );
-  }
-}
-
-class CustomClassesPaginator extends Component {
-  state = { page: 1, totalItems: 120 };
-  handlePageChange = page => {
-    this.setState({ page });
-  };
-  render() {
-    const { page, totalItems } = this.state;
-    return (
-      <Paginator
-        totalItems={totalItems}
-        currentPage={page}
-        onPageChange={this.handlePageChange}
-        classes={{
-          container: 'paginator-container',
-          list: 'paginator-list',
-          pageItem: 'paginator-item',
-          pageLink: 'paginator-link',
-          pageLinkActive: 'paginator-link--active',
-          pageLinkDisabled: 'paginator-link--disabled'
-        }}
-      />
-    );
-  }
-}
-
-class CustomStylesPaginator extends Component {
-  state = { page: 1, totalItems: 120 };
-  handlePageChange = page => {
-    this.setState({ page });
-  };
-  render() {
-    const { page, totalItems } = this.state;
-    return (
-      <Paginator
-        totalItems={totalItems}
-        currentPage={page}
-        onPageChange={this.handlePageChange}
-        styles={{
-          container: {
-            padding: '10px 0',
-            borderTop: '1px solid #ccc',
-            borderBottom: '1px solid #ccc'
-          },
-          list: { marginBottom: 0, padding: 0 },
-          pageLink: { padding: '8px 13px', color: '#285e28' },
-          pageLinkActive: { backgroundColor: '#b1d1be' },
-          pageItem: { padding: '5px 0' }
-        }}
-      />
-    );
-  }
-}
+export default DefaultPaginatorExamples;
