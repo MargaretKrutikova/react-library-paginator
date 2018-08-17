@@ -18,8 +18,8 @@ export type PaginatorClasses = {
 } & PageClasses;
 
 export type PageClasses = {
-  pageItem?: string | null;
-  pageLink?: string | null;
+  pageItem?: string;
+  pageLink?: string;
   pageLinkActive?: string;
   pageLinkDisabled?: string;
 };

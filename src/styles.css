@@ -1,7 +1,10 @@
-.rl-pagination {
+.rl-pagination-base {
   display: flex;
   justify-content: center;
   list-style-type: none;
+}
+
+.rl-pagination {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
@@ -9,20 +12,31 @@
   letter-spacing: 0.5px;
 }
 
+.rl-page-link-base,
+.rl-page-link-base:hover {
+  text-decoration: none;
+}
+.rl-page-link-base--active {
+  cursor: default;
+}
+.rl-page-link-base--disabled {
+  pointer-events: none;
+  cursor: default;
+}
 .rl-page-link {
-  position: relative;
-  display: block;
   padding: 0.2rem 0.5rem;
   color: #135bb9;
-  text-decoration: none;
+  margin: 0 5px;
+}
+.rl-page-link--active {
+  background-color: #dee2e6;
+  border-radius: 15%;
+  color: #444444;
 }
 .rl-page-link:hover {
   color: #6688b6;
 }
 
-.rl-page-link.active {
-  background-color: #dee2e6;
-  border-radius: 15%;
-  color: #444444;
-  cursor: default;
+.rl-page-link--disable {
+  color: #6c757d;
 }

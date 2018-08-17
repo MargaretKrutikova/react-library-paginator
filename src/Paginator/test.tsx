@@ -8,7 +8,8 @@ describe("Paginator", () => {
     currentPage: 4,
     totalPages: 10,
     pagesToShow: [1, 2, 3, 4],
-    onPageChange: jest.fn()
+    onPageChange: jest.fn(),
+    useBootstrapClasses: false
   };
 
   it(" renders all pages to show with active page", () => {
@@ -17,6 +18,7 @@ describe("Paginator", () => {
     const createPageElement = (page: number, isActive: boolean) => (
       <Page
         onPageChange={testProps.onPageChange}
+        useBootstrapClasses={testProps.useBootstrapClasses}
         isActive={isActive}
         isDisabled={false}
         page={page}

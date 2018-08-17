@@ -5,6 +5,7 @@ import Page, { PropType } from ".";
 describe("Page", () => {
   it("it changes classes if isActive or isDisabled props change", () => {
     const testProps: PropType = {
+      useBootstrapClasses: false,
       isActive: false,
       isDisabled: false,
       page: 4,
@@ -30,6 +31,7 @@ describe("Page", () => {
   it(" calls onPageChange with current page if page is not disabled and not active", () => {
     const mockCallback = jest.fn();
     const testProps: PropType = {
+      useBootstrapClasses: false,
       isActive: false,
       isDisabled: false,
       page: 4,
@@ -48,6 +50,7 @@ describe("Page", () => {
   it(" doesn't call onPageChange if page is disabled or active", () => {
     const mockCallback = jest.fn();
     const testProps: PropType = {
+      useBootstrapClasses: false,
       isActive: true,
       isDisabled: false,
       page: 4,

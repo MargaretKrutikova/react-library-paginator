@@ -28,6 +28,7 @@ const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
     itemsPerPage,
     maxPagesToShow,
     totalItems,
+    useBootstrapClasses,
     ...rest
   } = props;
 
@@ -38,14 +39,20 @@ const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
     maxPagesToShow: maxPagesToShow!
   });
 
-  return <Paginator {...paginator} {...rest} />;
+  return (
+    <Paginator
+      useBootstrapClasses={useBootstrapClasses!}
+      {...paginator}
+      {...rest}
+    />
+  );
 };
 
 PaginatorContainer.defaultProps = {
   currentPage: 1,
   itemsPerPage: 10,
   maxPagesToShow: 3,
-  useBootstrapClasses: true,
+  useBootstrapClasses: false,
   styles: {},
   classes: {}
 };

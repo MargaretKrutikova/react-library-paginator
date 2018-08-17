@@ -11,10 +11,10 @@ export type PropType = {
   page: number;
   children?: React.ReactNode;
   onPageChange: (page: number) => void;
+  useBootstrapClasses: boolean;
 } & Partial<DefaultProps>;
 
 type DefaultProps = {
-  useBootstrapClasses: boolean | null;
   styles: PageStyles | null;
   classes: PageClasses | null;
 };
@@ -28,8 +28,7 @@ class Page extends React.PureComponent<PropType> {
   };
   static defaultProps: DefaultProps = {
     classes: {},
-    styles: {},
-    useBootstrapClasses: true
+    styles: {}
   };
   setPage = (event: React.MouseEvent<HTMLElement>, page: number) => {
     if (event) {
@@ -57,19 +56,30 @@ class Page extends React.PureComponent<PropType> {
 
     return (
       <li
-        className={classNames({ "page-item": useBootstrapClasses }, [pageItem])}
+        className={classNames(
+          useBootstrapClasses && {
+            "page-item": true,
+            active: isActive,
+            disabled: isDisabled
+          },
+          [pageItem]
+        )}
         style={customStyles.pageItem}
       >
         <a
           href="#"
           className={classNames(
-            styles.rlPageLink,
-            { "page-link": useBootstrapClasses },
+            styles.rlPageLinkBase,
             pageLink,
-            {
-              [`${styles.active} active ${pageLinkActive}`]: isActive,
-              [`disabled ${pageLinkDisabled}`]: isDisabled
-            }
+            !useBootstrapClasses
+              ? {
+                  [styles.rlPageLinkBaseActive]: isActive,
+                  [styles.rlPageLinkBaseDisabled]: isDisabled,
+                  [pageLink || styles.rlPageLink]: true,
+                  [pageLinkActive || styles.rlPageLinkActive]: isActive,
+                  [pageLinkDisabled || styles.rlPageLinkDisable]: isDisabled
+                }
+              : "page-link"
           )}
           style={pageLinkStyles}
           onClick={event => this.setPage(event, page)}

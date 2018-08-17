@@ -10,10 +10,10 @@ type Props = {
   totalPages: number;
   pagesToShow: number[];
   onPageChange: (page: number) => void;
+  useBootstrapClasses: boolean;
 } & Partial<DefaultProps>;
 
 type DefaultProps = {
-  useBootstrapClasses: boolean | null;
   styles: PaginatorStyles | null;
   classes: PaginatorClasses | null;
 };
@@ -27,8 +27,7 @@ class Paginator extends React.PureComponent<Props> {
   };
   static defaultProps: DefaultProps = {
     classes: {},
-    styles: {},
-    useBootstrapClasses: true
+    styles: {}
   };
   render() {
     const {
@@ -63,9 +62,9 @@ class Paginator extends React.PureComponent<Props> {
         <ul
           style={customStyles!.list}
           className={classNames(
-            [styles.rlPagination],
+            [styles.rlPaginationBase],
             { paginaton: useBootstrapClasses },
-            [classes!.list]
+            [classes!.list || styles.rlPagination]
           )}
         >
           <Page page={1} isDisabled={isFirstPage} {...pageProps}>

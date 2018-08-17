@@ -10,7 +10,7 @@ ShallowWrapper {
     onPageChange={[Function]}
     page={4}
     styles={Object {}}
-    useBootstrapClasses={true}
+    useBootstrapClasses={false}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -25,14 +25,14 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <a
-        className="page-link"
+        className=""
         href="#"
         onClick={[Function]}
         style={Object {}}
       >
         4
       </a>,
-      "className": "page-item",
+      "className": "",
       "style": undefined,
     },
     "ref": null,
@@ -42,7 +42,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": 4,
-        "className": "page-link",
+        "className": "",
         "href": "#",
         "onClick": [Function],
         "style": Object {},
@@ -60,14 +60,14 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <a
-          className="page-link"
+          className=""
           href="#"
           onClick={[Function]}
           style={Object {}}
         >
           4
         </a>,
-        "className": "page-item",
+        "className": "",
         "style": undefined,
       },
       "ref": null,
@@ -77,7 +77,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 4,
-          "className": "page-link",
+          "className": "",
           "href": "#",
           "onClick": [Function],
           "style": Object {},
@@ -117,7 +117,7 @@ ShallowWrapper {
     onPageChange={[Function]}
     page={4}
     styles={Object {}}
-    useBootstrapClasses={true}
+    useBootstrapClasses={false}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -132,14 +132,14 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <a
-        className="page-link undefined active undefined"
+        className=""
         href="#"
         onClick={[Function]}
         style={Object {}}
       >
         4
       </a>,
-      "className": "page-item",
+      "className": "",
       "style": undefined,
     },
     "ref": null,
@@ -149,7 +149,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": 4,
-        "className": "page-link undefined active undefined",
+        "className": "",
         "href": "#",
         "onClick": [Function],
         "style": Object {},
@@ -167,14 +167,14 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <a
-          className="page-link undefined active undefined"
+          className=""
           href="#"
           onClick={[Function]}
           style={Object {}}
         >
           4
         </a>,
-        "className": "page-item",
+        "className": "",
         "style": undefined,
       },
       "ref": null,
@@ -184,7 +184,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 4,
-          "className": "page-link undefined active undefined",
+          "className": "",
           "href": "#",
           "onClick": [Function],
           "style": Object {},
@@ -224,7 +224,7 @@ ShallowWrapper {
     onPageChange={[Function]}
     page={4}
     styles={Object {}}
-    useBootstrapClasses={true}
+    useBootstrapClasses={false}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -239,14 +239,14 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": <a
-        className="page-link disabled undefined"
+        className="undefined"
         href="#"
         onClick={[Function]}
         style={Object {}}
       >
         4
       </a>,
-      "className": "page-item",
+      "className": "",
       "style": undefined,
     },
     "ref": null,
@@ -256,7 +256,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": 4,
-        "className": "page-link disabled undefined",
+        "className": "undefined",
         "href": "#",
         "onClick": [Function],
         "style": Object {},
@@ -274,14 +274,14 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": <a
-          className="page-link disabled undefined"
+          className="undefined"
           href="#"
           onClick={[Function]}
           style={Object {}}
         >
           4
         </a>,
-        "className": "page-item",
+        "className": "",
         "style": undefined,
       },
       "ref": null,
@@ -291,7 +291,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": 4,
-          "className": "page-link disabled undefined",
+          "className": "undefined",
           "href": "#",
           "onClick": [Function],
           "style": Object {},
