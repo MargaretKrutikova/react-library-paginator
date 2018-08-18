@@ -1,21 +1,24 @@
 # react-library-paginator
 
->
+> A React bootstrap-oriented customizable paginator component written in typescript.
 
 [![NPM](https://img.shields.io/npm/v/react-library-paginator.svg)](https://www.npmjs.com/package/react-library-paginator) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-A React bootstrap-oriented paginator component written in typescript. Features included:
+Features included:
 
-- **Paging functionality** - tested and proven to work, will make those pages appear on the screen
-- **Includes built-in styles** - default styling, for the lazy ones
-- **Boostrap-friendly** - compatible with Boostrap 4, for the conservative ones
-- **Customizable styles** - allows to customize styles via css classes or inline styles, for the love-to-customize-everything ones
+- **Paging functionality** - tested and proven to work, will make those pages appear on the screen,
+- **Includes built-in styles** - default styling, for the lazy ones,
+- **Boostrap-friendly** - compatible with Boostrap 4, for the conservative ones,
+- **Customizable styles** - allows to customize styles via css classes or inline styles, for the love-to-customize-things ones,
+- **Customizable navigation** - allows to customize paginator navigation elements.
 
 <p align="center"><img src="https://media.giphy.com/media/jVqjIZ6YOq00c15i3T/giphy.gif" width="350px"/>
 <p align="center"><img src="https://media.giphy.com/media/1wX9CyVyZbRJZZ9pPJ/giphy.gif" width="350px"/></p>
-<p align="center"><img src="https://media.giphy.com/media/EOe0acyrb7uoNsrIeP/giphy.gif" width="400px"/></p>
+<p align="center"><img src="https://media.giphy.com/media/5bkoiSvcKft7si0jAm/giphy.gif" width="400px"/></p>
 
 ## Demo
+
+Check out [demo](https://margaretkrutikova.github.io/react-library-paginator/) showing a few common use-cases.
 
 ## Install
 
@@ -68,6 +71,7 @@ export default class BasicPaginator extends Component {
 | useBootstrapClasses | `bool`     | `false`      | Indicates whether to apply bootstrap 4 pagination classes (e.g. `pagination`, `page-item` etc) to the paging elements. |
 | styles              | `object`   | `{}`         | Object defining class names for the paging elements (see below).                                                       |
 | classes             | `object`   | `{}`         | Object defining inline styles for the paging elements (see below).                                                     |
+| navigation          | `object`   | `{}`         | Object customizing visibility and texts for paginator navigation elements (see below).                                 |
 
 ### Classes and styles
 
@@ -80,7 +84,23 @@ export default class BasicPaginator extends Component {
 | pageLinkActive   | `string`/`object`     | Class name/style object for the link of currently selected page.                 |
 | pageLinkDisabled | `string`/`object`     | Class name/style object for the link of non-selectable pages/navigation symbols. |
 
-## Development
+### Navigation
+
+| Object key       | Type      | Description                                                         |
+| ---------------- | --------- | ------------------------------------------------------------------- |
+| firstPageText    | `string`  | Text displayed inside navigation element for the first page .       |
+| prevPageText     | `string`  | Text displayed inside navigation element for the previous page.     |
+| nextPageText     | `string`  | Text displayed inside navigation element for the next page .        |
+| lastPageText     | `string`  | Text displayed inside navigation element for the last page .        |
+| hideFirstPageNav | `boolean` | Indicates whether to hide navigation element for the first page.    |
+| hidePrevPageNav  | `boolean` | Indicates whether to hide navigation element for the previous page. |
+| hideNextPageNav  | `boolean` | Indicates whether to hide navigation element for the next page .    |
+| hideLastPageNav  | `boolean` | Indicates whether to hide navigation element for the last page .    |
+
+## Contributing
+
+Contributions are welcome, bug reports, pull requests, feature requests are highly appreciated and rewarded
+with lightning fast responses and developing!
 
 ## License
 
