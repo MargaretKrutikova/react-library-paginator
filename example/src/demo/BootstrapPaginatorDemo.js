@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 import Paginator from 'react-library-paginator';
 
-import BootstrapPaginator from './BootstrapPaginator';
-import BootstrapCustomClassesPaginator from './BootstrapCustomClassesPaginator';
+import BootstrapPaginator from '../examples/BootstrapPaginator';
+import BootstrapCustomClassesPaginator from '../examples/BootstrapCustomClassesPaginator';
 
 const BootstrapPaginatorExamples = () => (
-  <div className="example-container">
-    <div className="example">
+  <div className="demo-container">
+    <div className="demo">
       <div className="subtitle">Bootstrap default css</div>
-      <pre className="example-code">
+      <pre className="demo-code">
         {`<Paginator
   totalItems={totalItems}
   currentPage={page}
@@ -20,10 +20,10 @@ const BootstrapPaginatorExamples = () => (
       </pre>
       <BootstrapPaginator />
     </div>
-    <div className="example">
+    <div className="demo">
       <div className="subtitle">Custom styling via css classes</div>
       <div style={{ display: 'flex' }}>
-        <pre className="example-code" style={{ marginRight: 20 }}>
+        <pre className="demo-code" style={{ marginRight: 20 }}>
           {`<Paginator
     totalItems={totalItems}
     currentPage={page}
@@ -37,7 +37,7 @@ const BootstrapPaginatorExamples = () => (
   />
 `}
         </pre>
-        <pre className="example-code">
+        <pre className="demo-code">
           {`/* css */
 ...
 .b-paginator-link {

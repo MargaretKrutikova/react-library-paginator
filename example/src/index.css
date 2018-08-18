@@ -3,15 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+ul {
+  padding: 0;
+}
 
-.example-container,
+.demo-container,
 .app-container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin-bottom: 20px;
 }
-.example-container {
+.demo-container {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
@@ -20,19 +21,23 @@ body {
 
 .app-container {
   padding: 50px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.example {
+.demo {
   display: flex;
   flex-direction: column;
   margin-right: 40px;
+  align-items: center;
 }
-.example-code {
+.demo-code {
   font-size: 12px;
   padding: 10px;
   background-color: #eee;
   margin-bottom: 40px;
   height: 310px;
+  align-self: stretch;
 }
 .subtitle {
   font-size: 20px;
@@ -41,61 +46,4 @@ body {
 .title {
   font-size: 24px;
   margin-bottom: 10px;
-}
-/* code example */
-.paginator-container {
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  justify-content: center;
-  align-items: center;
-  display: flex;
-}
-.paginator-list {
-  padding: 10px 20px;
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0;
-}
-
-.paginator-link {
-  color: #285e28;
-  padding: 10px;
-  transition: all 0.5s ease;
-}
-.paginator-link:hover {
-  color: #31a231;
-  border-color: #31a231;
-}
-.paginator-link--active {
-  border-bottom: 2px solid #285e28;
-}
-.paginator-link--disabled {
-  color: #64726a;
-}
-.paginator-item {
-  padding: 10px 5px;
-}
-
-/* bootstrap configurable example */
-.b-paginator-link {
-  color: rgb(155, 70, 70);
-  box-shadow: none !important;
-}
-.b-paginator-link:hover {
-  background-color: rgb(252, 201, 201);
-  border-color: rgb(253, 180, 180);
-  color: rgb(126, 57, 57);
-}
-.b-paginator-item.disabled .page-link,
-.b-paginator-link {
-  background-color: rgb(253, 232, 232);
-  border-color: rgb(255, 221, 221);
-}
-
-.b-paginator-item.active .page-link {
-  background-color: rgb(255, 153, 153);
-  border-color: rgb(255, 119, 119);
-}
-.b-paginator-item.disabled .page-link {
-  color: rgb(88, 71, 71);
 }

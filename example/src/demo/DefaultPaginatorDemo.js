@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-import BasicPaginator from './BasicPaginator';
-import CustomClassesPaginator from './CustomClassesPaginator';
-import CustomStylesPaginator from './CustomStylesPaginator';
+import BasicPaginator from '../examples/BasicPaginator';
+import CustomClassesPaginator from '../examples/CustomClassesPaginator';
+import CustomStylesPaginator from '../examples/CustomStylesPaginator';
+import CustomNavigationPaginator from '../examples/CustomNavigationPaginator';
 
-const DefaultPaginatorExamples = () => (
-  <div className="example-container">
-    <div className="example">
+const DefaultPaginatorDemo = () => (
+  <div className="demo-container">
+    <div className="demo">
       <div className="subtitle">Default css</div>
-      <pre className="example-code">
+      <pre className="demo-code">
         {`<Paginator
   totalItems={totalItems}
   currentPage={page}
@@ -18,10 +19,10 @@ const DefaultPaginatorExamples = () => (
       </pre>
       <BasicPaginator />
     </div>
-    <div className="example">
+    <div className="demo">
       <div className="subtitle">Custom styling via css classes</div>
       <div style={{ display: 'flex' }}>
-        <pre className="example-code" style={{ marginRight: 20 }}>
+        <pre className="demo-code" style={{ marginRight: 20 }}>
           {`<Paginator
   totalItems={totalItems}
   currentPage={page}
@@ -37,7 +38,7 @@ const DefaultPaginatorExamples = () => (
 />
 `}
         </pre>
-        <pre className="example-code">
+        <pre className="demo-code">
           {`/* css */
 ...
 .paginator-list {
@@ -58,9 +59,9 @@ const DefaultPaginatorExamples = () => (
       </div>
       <CustomClassesPaginator />
     </div>
-    <div className="example">
+    <div className="demo">
       <div className="subtitle">Custom styling via inline styles</div>
-      <pre className="example-code">
+      <pre className="demo-code">
         {`<Paginator
   totalItems={totalItems}
   currentPage={page}
@@ -81,7 +82,25 @@ const DefaultPaginatorExamples = () => (
       </pre>
       <CustomStylesPaginator />
     </div>
+    <div className="demo">
+      <div className="subtitle">Custom navigation options</div>
+      <pre className="demo-code">
+        {`<Paginator
+  totalItems={totalItems}
+  currentPage={page}
+  onPageChange={this.handlePageChange}
+  navigation={{
+    firstPageText: 'start',
+    lastPageText: 'end',
+    nextPageText: '»',
+    prevPageText: '«'
+  }}
+/>
+`}
+      </pre>
+      <CustomNavigationPaginator />
+    </div>
   </div>
 );
 
-export default DefaultPaginatorExamples;
+export default DefaultPaginatorDemo;
