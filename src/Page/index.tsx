@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
-import { PageStyles, PageClasses } from "../types";
-import classNames from "classnames";
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import { PageStyles, PageClasses } from '../types';
+import classNames from 'classnames';
 
-import styles from "../styles.css";
+import styles from '../styles.css';
 
 export type PropType = {
   isActive?: boolean;
@@ -48,17 +48,19 @@ class Page extends React.PureComponent<PropType> {
     } = this.props.classes!;
 
     const customStyles = this.props.styles!;
+
     const pageLinkStyles = {
       ...customStyles.pageLink,
       ...(isActive ? customStyles.pageLinkActive : {}),
-      ...(isDisabled ? customStyles.pageLinkDisabled : {})
+      ...(isDisabled ? customStyles.pageLinkDisabled : {}),
+      ...(useBootstrapClasses && { boxShadow: 'none' })
     };
 
     return (
       <li
         className={classNames(
           useBootstrapClasses && {
-            "page-item": true,
+            'page-item': true,
             active: isActive,
             disabled: isDisabled
           },
@@ -79,7 +81,7 @@ class Page extends React.PureComponent<PropType> {
                   [pageLinkActive || styles.rlPageLinkActive]: isActive,
                   [pageLinkDisabled || styles.rlPageLinkDisable]: isDisabled
                 }
-              : "page-link"
+              : 'page-link'
           )}
           style={pageLinkStyles}
           onClick={event => this.setPage(event, page)}
