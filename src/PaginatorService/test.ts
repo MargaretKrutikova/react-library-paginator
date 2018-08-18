@@ -1,5 +1,5 @@
-import { PaginatorInput, PaginatorOutput } from ".";
-import PaginatorService from ".";
+import { PaginatorInput, PaginatorOutput } from '.';
+import PaginatorService from '.';
 
 const maxPagesToShow = 4;
 
@@ -68,8 +68,8 @@ const cases: Array<Case> = [
   { input: paginatorInput(0, 6, 0), output: paginatorOutput(0, 0, []) }
 ];
 
-describe("PaginatorService", () => {
-  it("is truthy", () => {
+describe('PaginatorService', () => {
+  it('is truthy', () => {
     cases.forEach((caseToTest: Case) => {
       const paginator = PaginatorService.getPaginator(caseToTest.input);
       expect(paginator).toEqual(caseToTest.output);

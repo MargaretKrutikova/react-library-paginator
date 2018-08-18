@@ -1,11 +1,11 @@
-import * as React from "react";
-import * as Enzyme from "enzyme";
+import * as React from 'react';
+import * as Enzyme from 'enzyme';
 
-import PaginatorService from "./PaginatorService";
-import PaginatorContainer from ".";
+import PaginatorService from './PaginatorService';
+import PaginatorContainer from '.';
 
-describe("PaginatorContainer", () => {
-  it("should call PaginatorService.getPaginator on init and when updating props", () => {
+describe('PaginatorContainer', () => {
+  it('should call PaginatorService.getPaginator on init and when updating props', () => {
     PaginatorService.getPaginator = jest.fn(() => ({
       currentPage: 1,
       totalPages: 2,

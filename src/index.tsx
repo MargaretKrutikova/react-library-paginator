@@ -2,11 +2,11 @@
  * @class PaginatorContainer
  */
 
-import * as React from "react";
-import * as PropTypes from "prop-types";
-import Paginator from "./Paginator";
-import PaginatorService from "./PaginatorService";
-import { PaginatorStyles, PaginatorClasses, CustomPropTypes } from "./types";
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import Paginator from './Paginator';
+import PaginatorService from './PaginatorService';
+import { PaginatorStyles, PaginatorClasses, CustomPropTypes } from './types';
 
 export type Props = {
   totalItems: number;

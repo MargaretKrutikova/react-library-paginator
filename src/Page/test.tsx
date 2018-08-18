@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as Enzyme from "enzyme";
-import Page, { PropType } from ".";
+import * as React from 'react';
+import * as Enzyme from 'enzyme';
+import Page, { PropType } from '.';
 
-describe("Page", () => {
-  it("it changes classes if isActive or isDisabled props change", () => {
+describe('Page', () => {
+  it('it changes classes if isActive or isDisabled props change', () => {
     const testProps: PropType = {
       useBootstrapClasses: false,
       isActive: false,
@@ -28,7 +28,7 @@ describe("Page", () => {
     expect(component).toMatchSnapshot();
   });
 
-  it(" calls onPageChange with current page if page is not disabled and not active", () => {
+  it(' calls onPageChange with current page if page is not disabled and not active', () => {
     const mockCallback = jest.fn();
     const testProps: PropType = {
       useBootstrapClasses: false,
@@ -41,7 +41,7 @@ describe("Page", () => {
       <Page {...testProps} />
     );
 
-    component.find("a").simulate("click");
+    component.find('a').simulate('click');
 
     expect(mockCallback.mock.calls.length).toBe(1);
     expect(mockCallback.mock.calls[0][0]).toBe(4);
@@ -60,11 +60,11 @@ describe("Page", () => {
       <Page {...testProps} />
     );
 
-    component.find("a").simulate("click");
+    component.find('a').simulate('click');
     expect(mockCallback.mock.calls.length).toBe(0);
 
     component.setProps({ isActive: false, isDisabled: true });
-    component.find("a").simulate("click");
+    component.find('a').simulate('click');
     expect(mockCallback.mock.calls.length).toBe(0);
   });
 });

@@ -1,4 +1,4 @@
-import * as PropTypes from "prop-types";
+import * as PropTypes from 'prop-types';
 
 export type PaginatorStyles = {
   container?: object;

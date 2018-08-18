@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as Enzyme from "enzyme";
-import Paginator from ".";
-import Page from "../Page";
+import * as React from 'react';
+import * as Enzyme from 'enzyme';
+import Paginator from '.';
+import Page from '../Page';
 
-describe("Paginator", () => {
+describe('Paginator', () => {
   const testProps = {
     currentPage: 4,
     totalPages: 10,
@@ -12,7 +12,7 @@ describe("Paginator", () => {
     useBootstrapClasses: false
   };
 
-  it(" renders all pages to show with active page", () => {
+  it(' renders all pages to show with active page', () => {
     const wrapper = Enzyme.shallow(<Paginator {...testProps} />);
 
     const createPageElement = (page: number, isActive: boolean) => (
@@ -30,7 +30,7 @@ describe("Paginator", () => {
     expect(wrapper.containsAllMatchingElements(pagesToShowChildren)).toBe(true);
   });
 
-  it(" matches snapshot", () => {
+  it(' matches snapshot', () => {
     const wrapper = Enzyme.shallow(<Paginator {...testProps} />);
 
     expect(wrapper).toMatchSnapshot();

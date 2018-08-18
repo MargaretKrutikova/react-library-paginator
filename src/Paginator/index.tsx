@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as PropTypes from "prop-types";
-import classNames from "classnames";
-import Page from "../Page";
-import { PaginatorStyles, PaginatorClasses } from "../types";
-import styles from "../styles.css";
+import * as React from 'react';
+import * as PropTypes from 'prop-types';
+import classNames from 'classnames';
+import Page from '../Page';
+import { PaginatorStyles, PaginatorClasses } from '../types';
+import styles from '../styles.css';
 
 type Props = {
   currentPage: number;
