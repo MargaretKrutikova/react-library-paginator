@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import BasicPaginator from '../examples/BasicPaginator';
 import CustomClassesPaginator from '../examples/CustomClassesPaginator';

@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-
-import Paginator from 'react-library-paginator';
+import React from 'react';
 
 import BootstrapPaginator from '../examples/BootstrapPaginator';
 import BootstrapCustomClassesPaginator from '../examples/BootstrapCustomClassesPaginator';
