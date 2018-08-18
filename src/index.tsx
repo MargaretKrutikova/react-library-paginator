@@ -6,7 +6,12 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Paginator from './Paginator';
 import PaginatorService from './PaginatorService';
-import { PaginatorStyles, PaginatorClasses, CustomPropTypes } from './types';
+import {
+  PaginatorStyles,
+  PaginatorClasses,
+  Navigation,
+  CustomPropTypes
+} from './types';
 
 export type Props = {
   totalItems: number;
@@ -20,6 +25,7 @@ type DefaultProps = {
   useBootstrapClasses: boolean | null;
   styles: PaginatorStyles | null;
   classes: PaginatorClasses | null;
+  navigation: Navigation | null;
 };
 
 const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
@@ -29,6 +35,7 @@ const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
     maxPagesToShow,
     totalItems,
     useBootstrapClasses,
+    navigation,
     ...rest
   } = props;
 
@@ -42,6 +49,7 @@ const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
   return (
     <Paginator
       useBootstrapClasses={useBootstrapClasses!}
+      navigation={navigation!}
       {...paginator}
       {...rest}
     />
@@ -54,7 +62,8 @@ PaginatorContainer.defaultProps = {
   maxPagesToShow: 3,
   useBootstrapClasses: false,
   styles: {},
-  classes: {}
+  classes: {},
+  navigation: {}
 };
 
 PaginatorContainer.propTypes = {
@@ -65,7 +74,8 @@ PaginatorContainer.propTypes = {
   maxPagesToShow: PropTypes.number,
   useBootstrapClasses: PropTypes.bool,
   styles: CustomPropTypes.styles,
-  classes: CustomPropTypes.classes
+  classes: CustomPropTypes.classes,
+  navigation: CustomPropTypes.navigation
 };
 
 export default PaginatorContainer;

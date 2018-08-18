@@ -24,6 +24,17 @@ export type PageClasses = {
   pageLinkDisabled?: string;
 };
 
+export type Navigation = {
+  firstPageText?: string;
+  prevPageText?: string;
+  nextPageText?: string;
+  lastPageText?: string;
+  hideFirstPageNav?: boolean | null;
+  hidePrevPageNav?: boolean | null;
+  hideNextPageNav?: boolean | null;
+  hideLastPageNav?: boolean | null;
+};
+
 export const CustomPropTypes = {
   styles: PropTypes.shape({
     container: PropTypes.object,
@@ -40,5 +51,15 @@ export const CustomPropTypes = {
     pageLinkActive: PropTypes.string,
     pageLinkDisabled: PropTypes.string,
     pageLink: PropTypes.string
+  }),
+  navigation: PropTypes.shape({
+    firstPageText: PropTypes.string,
+    prevPageText: PropTypes.string,
+    nextPageText: PropTypes.string,
+    lastPageText: PropTypes.string,
+    hideFirstPageNav: PropTypes.bool,
+    hidePrevPageNav: PropTypes.bool,
+    hideNextPageNav: PropTypes.bool,
+    hideLastPageNav: PropTypes.bool
   })
 };

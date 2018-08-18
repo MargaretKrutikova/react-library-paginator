@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Paginator
     classes={Object {}}
     currentPage={4}
+    navigation={Object {}}
     onPageChange={[MockFunction]}
     pagesToShow={
       Array [

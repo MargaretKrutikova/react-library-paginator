@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Page from '../Page';
-import { PaginatorStyles, PaginatorClasses } from '../types';
+import { PaginatorStyles, PaginatorClasses, Navigation } from '../types';
 import styles from '../styles.css';
 
 type Props = {
@@ -16,6 +16,7 @@ type Props = {
 type DefaultProps = {
   styles: PaginatorStyles | null;
   classes: PaginatorClasses | null;
+  navigation: Navigation;
 };
 
 class Paginator extends React.PureComponent<Props> {
@@ -27,7 +28,8 @@ class Paginator extends React.PureComponent<Props> {
   };
   static defaultProps: DefaultProps = {
     classes: {},
-    styles: {}
+    styles: {},
+    navigation: {}
   };
   render() {
     const {
@@ -37,7 +39,8 @@ class Paginator extends React.PureComponent<Props> {
       onPageChange,
       useBootstrapClasses,
       styles: customStyles,
-      classes
+      classes,
+      navigation = {}
     } = this.props;
 
     const isFirstPage = currentPage === 1,
@@ -67,14 +70,21 @@ class Paginator extends React.PureComponent<Props> {
             [classes!.list || styles.rlPagination]
           )}
         >
-          <Page page={1} isDisabled={isFirstPage} {...pageProps}>
-            <span>First</span>
-          </Page>
+          {!navigation.hideFirstPageNav && (
+            <Page page={1} isDisabled={isFirstPage} {...pageProps}>
+              <span>{navigation.firstPageText || 'First'}</span>
+            </Page>
+          )}
 
-          <Page page={currentPage - 1} isDisabled={isFirstPage} {...pageProps}>
-            <span>&larr;</span>
-          </Page>
-
+          {!navigation.hidePrevPageNav && (
+            <Page
+              page={currentPage - 1}
+              isDisabled={isFirstPage}
+              {...pageProps}
+            >
+              <span>{navigation.prevPageText || '←'}</span>
+            </Page>
+          )}
           {pagesToShow.map((page, index) => (
             <Page
               key={index}
@@ -85,12 +95,16 @@ class Paginator extends React.PureComponent<Props> {
             />
           ))}
 
-          <Page page={currentPage + 1} isDisabled={isLastPage} {...pageProps}>
-            <span>&rarr;</span>
-          </Page>
-          <Page page={totalPages} isDisabled={isLastPage} {...pageProps}>
-            <span>Last</span>
-          </Page>
+          {!navigation.hideNextPageNav && (
+            <Page page={currentPage + 1} isDisabled={isLastPage} {...pageProps}>
+              <span>{navigation.nextPageText || '→'}</span>
+            </Page>
+          )}
+          {!navigation.hideLastPageNav && (
+            <Page page={totalPages} isDisabled={isLastPage} {...pageProps}>
+              <span>{navigation.lastPageText || 'Last'}</span>
+            </Page>
+          )}
         </ul>
       </nav>
     );
