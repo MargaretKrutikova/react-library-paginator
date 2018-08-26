@@ -29,10 +29,10 @@ export type Navigation = {
   prevPageText?: string;
   nextPageText?: string;
   lastPageText?: string;
-  hideFirstPageNav?: boolean | null;
-  hidePrevPageNav?: boolean | null;
-  hideNextPageNav?: boolean | null;
-  hideLastPageNav?: boolean | null;
+  hideFirstPageNav?: boolean;
+  hidePrevPageNav?: boolean;
+  hideNextPageNav?: boolean;
+  hideLastPageNav?: boolean;
 };
 
 export const CustomPropTypes = {

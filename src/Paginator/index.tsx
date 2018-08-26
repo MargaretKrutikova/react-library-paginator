@@ -11,11 +11,11 @@ type Props = {
   pagesToShow: number[];
   onPageChange: (page: number) => void;
   useBootstrapClasses: boolean;
-} & Partial<DefaultProps>;
+} & DefaultProps;
 
 type DefaultProps = {
-  styles: PaginatorStyles | null;
-  classes: PaginatorClasses | null;
+  styles: PaginatorStyles;
+  classes: PaginatorClasses;
   navigation: Navigation;
 };
 
@@ -40,7 +40,7 @@ class Paginator extends React.PureComponent<Props> {
       useBootstrapClasses,
       styles: customStyles,
       classes,
-      navigation = {}
+      navigation
     } = this.props;
 
     const isFirstPage = currentPage === 1,
@@ -56,18 +56,18 @@ class Paginator extends React.PureComponent<Props> {
     return (
       <nav
         aria-label="Page navigation"
-        style={customStyles!.container}
+        style={customStyles.container}
         className={classNames(
           { paginator: useBootstrapClasses },
-          classes!.container
+          classes.container
         )}
       >
         <ul
-          style={customStyles!.list}
+          style={customStyles.list}
           className={classNames(
             [styles.rlPaginationBase],
             { paginaton: useBootstrapClasses },
-            [classes!.list || styles.rlPagination]
+            [classes.list || styles.rlPagination]
           )}
         >
           {!navigation.hideFirstPageNav && (

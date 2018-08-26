@@ -9,26 +9,25 @@ export type PropType = {
   isActive?: boolean;
   isDisabled: boolean;
   page: number;
-  children?: React.ReactNode;
   onPageChange: (page: number) => void;
   useBootstrapClasses: boolean;
-} & Partial<DefaultProps>;
+} & DefaultProps;
 
 type DefaultProps = {
-  styles: PageStyles | null;
-  classes: PageClasses | null;
+  styles: PageStyles;
+  classes: PageClasses;
 };
 
 class Page extends React.PureComponent<PropType> {
-  static propTypes = {
-    isActive: PropTypes.bool,
-    isDisabled: PropTypes.bool,
-    page: PropTypes.number.isRequired,
-    onPageChange: PropTypes.func.isRequired
-  };
   static defaultProps: DefaultProps = {
     classes: {},
     styles: {}
+  };
+  static propTypes = {
+    isActive: PropTypes.bool,
+    isDisabled: PropTypes.bool.isRequired,
+    page: PropTypes.number.isRequired,
+    onPageChange: PropTypes.func.isRequired
   };
   setPage = (event: React.MouseEvent<HTMLElement>, page: number) => {
     if (event) {
@@ -45,9 +44,9 @@ class Page extends React.PureComponent<PropType> {
       pageLink,
       pageLinkActive,
       pageLinkDisabled
-    } = this.props.classes!;
+    } = this.props.classes;
 
-    const customStyles = this.props.styles!;
+    const customStyles = this.props.styles;
 
     const pageLinkStyles = {
       ...customStyles.pageLink,

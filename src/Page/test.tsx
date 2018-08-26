@@ -1,10 +1,10 @@
 import * as React from 'react';
 import * as Enzyme from 'enzyme';
-import Page, { PropType } from '.';
+import Page from '.';
 
 describe('Page', () => {
   it('it changes classes if isActive or isDisabled props change', () => {
-    const testProps: PropType = {
+    const testProps = {
       useBootstrapClasses: false,
       isActive: false,
       isDisabled: false,
@@ -30,7 +30,7 @@ describe('Page', () => {
 
   it(' calls onPageChange with current page if page is not disabled and not active', () => {
     const mockCallback = jest.fn();
-    const testProps: PropType = {
+    const testProps = {
       useBootstrapClasses: false,
       isActive: false,
       isDisabled: false,
@@ -49,7 +49,7 @@ describe('Page', () => {
 
   it(" doesn't call onPageChange if page is disabled or active", () => {
     const mockCallback = jest.fn();
-    const testProps: PropType = {
+    const testProps = {
       useBootstrapClasses: false,
       isActive: true,
       isDisabled: false,

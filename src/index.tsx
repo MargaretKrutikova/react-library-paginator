@@ -16,66 +16,57 @@ import {
 export type Props = {
   totalItems: number;
   onPageChange: (page: number) => void;
-} & Partial<DefaultProps>;
+} & DefaultProps;
 
 type DefaultProps = {
-  currentPage: number | null;
-  itemsPerPage: number | null;
-  maxPagesToShow: number | null;
-  useBootstrapClasses: boolean | null;
-  styles: PaginatorStyles | null;
-  classes: PaginatorClasses | null;
-  navigation: Navigation | null;
+  currentPage: number;
+  itemsPerPage: number;
+  maxPagesToShow: number;
+  useBootstrapClasses: boolean;
+  styles: PaginatorStyles;
+  classes: PaginatorClasses;
+  navigation: Navigation;
 };
 
-const PaginatorContainer: React.StatelessComponent<Props> = (props: Props) => {
-  const {
-    currentPage,
-    itemsPerPage,
-    maxPagesToShow,
-    totalItems,
-    useBootstrapClasses,
-    navigation,
-    ...rest
-  } = props;
+class PaginatorContainer extends React.Component<Props> {
+  static defaultProps = {
+    currentPage: 1,
+    itemsPerPage: 10,
+    maxPagesToShow: 3,
+    useBootstrapClasses: false,
+    styles: {},
+    classes: {},
+    navigation: {}
+  };
+  static propTypes = {
+    totalItems: PropTypes.number.isRequired,
+    currentPage: PropTypes.number,
+    onPageChange: PropTypes.func.isRequired,
+    itemsPerPage: PropTypes.number,
+    maxPagesToShow: PropTypes.number,
+    useBootstrapClasses: PropTypes.bool,
+    styles: CustomPropTypes.styles,
+    classes: CustomPropTypes.classes,
+    navigation: CustomPropTypes.navigation
+  };
+  render() {
+    const {
+      currentPage,
+      itemsPerPage,
+      maxPagesToShow,
+      totalItems,
+      ...rest
+    } = this.props;
 
-  const paginator = PaginatorService.getPaginator({
-    totalItems,
-    currentPage: currentPage!,
-    itemsPerPage: itemsPerPage!,
-    maxPagesToShow: maxPagesToShow!
-  });
+    const paginator = PaginatorService.getPaginator({
+      totalItems,
+      currentPage,
+      itemsPerPage,
+      maxPagesToShow
+    });
 
-  return (
-    <Paginator
-      useBootstrapClasses={useBootstrapClasses!}
-      navigation={navigation!}
-      {...paginator}
-      {...rest}
-    />
-  );
-};
-
-PaginatorContainer.defaultProps = {
-  currentPage: 1,
-  itemsPerPage: 10,
-  maxPagesToShow: 3,
-  useBootstrapClasses: false,
-  styles: {},
-  classes: {},
-  navigation: {}
-};
-
-PaginatorContainer.propTypes = {
-  totalItems: PropTypes.number.isRequired,
-  currentPage: PropTypes.number,
-  onPageChange: PropTypes.func.isRequired,
-  itemsPerPage: PropTypes.number,
-  maxPagesToShow: PropTypes.number,
-  useBootstrapClasses: PropTypes.bool,
-  styles: CustomPropTypes.styles,
-  classes: CustomPropTypes.classes,
-  navigation: CustomPropTypes.navigation
-};
+    return <Paginator {...paginator} {...rest} />;
+  }
+}
 
 export default PaginatorContainer;
