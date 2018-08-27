@@ -1,6 +1,6 @@
 # react-library-paginator
 
-> A React bootstrap-oriented customizable paginator component written in typescript.
+> A React bootstrap-oriented customizable paginator component written in typescript with support for `flow`.
 
 [![NPM](https://img.shields.io/npm/v/react-library-paginator.svg)](https://www.npmjs.com/package/react-library-paginator) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -10,7 +10,8 @@ Features included:
 - **Includes built-in styles** - default styling, for the lazy ones,
 - **Boostrap-friendly** - compatible with Boostrap 4, for the conservative ones,
 - **Customizable styles** - allows to customize styles via css classes or inline styles, for the love-to-customize-things ones,
-- **Customizable navigation** - allows to customize paginator navigation elements.
+- **Customizable navigation** - allows to customize paginator navigation elements,
+- **Supports flow** - has library definition in `flow-types`.
 
 <p align="center"><img src="https://media.giphy.com/media/jVqjIZ6YOq00c15i3T/giphy.gif" width="350px"/>
 <p align="center"><img src="https://media.giphy.com/media/1wX9CyVyZbRJZZ9pPJ/giphy.gif" width="350px"/></p>
@@ -25,6 +26,8 @@ Check out [demo](https://margaretkrutikova.github.io/react-library-paginator/) s
 ```bash
 npm install --save react-library-paginator
 ```
+
+As of version 2 has `flow` libdef on [flow-typed](https://github.com/flow-typed/flow-typed). After the paginator is installed, the libdef will be pulled in when running `flow-typed install`, read more on [flow-typed blog post](https://flow.org/blog/2016/10/13/Flow-Typed/).
 
 ## Usage
 
